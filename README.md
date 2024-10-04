@@ -1,15 +1,93 @@
-# now_playing
+# NowPlaying
 
-A new Flutter plugin project.
+NowPlaying is a Flutter plugin that provides easy integration with iOS Now Playing controls and information display. This package allows you to update the Now Playing information and handle remote control events for media playback.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter
-[plug-in package](https://flutter.dev/to/develop-plugins),
-a specialized package that includes platform-specific implementation code for
-Android and/or iOS.
+- Update Now Playing information (title, artist, duration, current time, playback rate, and image URL)
+- Handle remote control events (play, pause, next track, previous track, and seek)
+- Easy initialization and setup
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Installation
 
+Add this to your package's `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  now_playing: ^0.0.1
+```
+
+Then run:
+
+```bash
+flutter pub get
+```
+
+OR
+
+```bash
+flutter pub add now_playing
+```
+
+## Usage
+
+### Initialization
+
+Before using the NowPlaying functionality, you need to initialize it with the necessary event handlers:
+
+```dart
+NowPlaying.instance.initialize(
+  onPlay: () {
+    // Handle play event
+  },
+  onPause: () {
+    // Handle pause event
+  },
+  onNextTrack: () {
+    // Handle next track event
+  },
+  onPreviousTrack: () {
+    // Handle previous track event
+  },
+  onSeek: (time) {
+    // Handle seek event
+  },
+);
+```
+
+### Updating Now Playing Information
+
+You can update the Now Playing information at any time using the `updateNowPlayingInfo` method:
+
+```dart
+await NowPlaying.instance.updateNowPlayingInfo(
+  title: 'Song Title',
+  artist: 'Artist Name',
+  duration: 180.0, // Total duration in seconds
+  currentTime: 45.0, // Current playback position in seconds
+  playbackRate: 1.0, // Playback rate (1.0 for normal speed)
+  imageUrl: 'https://example.com/album_cover.jpg',
+);
+```
+
+## Notes
+
+- This plugin currently supports iOS only. Android support may be added in future versions.
+- Make sure to call `initialize()` before using any other methods of the NowPlaying instance.
+- The `imageUrl` parameter in `updateNowPlayingInfo` should be a valid URL to an image file.
+
+## License
+
+This project is licensed under the BSD 3-Clause License - see the [LICENSE](LICENSE) file for details.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## Issues and Feedback
+
+Please file specific issues, bugs, or feature requests in our [issue tracker](https://github.com/Deepidoo/now_playing/issues).
+
+## Author
+
+Deepidoo (c.alexandre@deepidoo.com)
