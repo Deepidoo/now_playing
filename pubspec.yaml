@@ -1,7 +1,7 @@
 name: now_playing
 description: "A new Flutter plugin project."
 version: 0.0.1
-homepage:
+repository: https://github.com/deepidoo/now_playing
 
 environment:
   sdk: ^3.5.3
