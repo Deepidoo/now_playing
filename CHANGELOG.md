@@ -1,3 +1,7 @@
+## 0.0.3
+
+* Fixed podspec name
+
 ## 0.0.2
 
 * Rename NowPlaying to NowPlayingView to match the plugin name.
