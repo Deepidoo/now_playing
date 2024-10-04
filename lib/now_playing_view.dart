@@ -2,13 +2,13 @@ import 'package:flutter/services.dart';
 
 /// NowPlaying is a Flutter plugin that provides easy integration with iOS Now Playing controls and information display.
 /// This package allows you to update the Now Playing information and handle remote control events for media playback.
-class NowPlaying {
-  static final NowPlaying instance = NowPlaying._internal();
+class NowPlayingView {
+  static final NowPlayingView instance = NowPlayingView._internal();
   static MethodChannel? _channel;
   bool _isInitialized = false;
 
   /// Private constructor for the NowPlaying class.
-  NowPlaying._internal();
+  NowPlayingView._internal();
 
   /// Initialize the NowPlaying plugin with the necessary event handlers.
   ///
@@ -76,7 +76,7 @@ class NowPlaying {
   }) async {
     if (!_isInitialized) {
       throw Exception(
-          'NowPlayable is not initialized. Call initialize() first.');
+          'NowPlayingView is not initialized. Call initialize() first.');
     }
     await _channel!.invokeMethod('updateNowPlayingInfo', {
       'title': title,

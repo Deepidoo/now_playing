@@ -1,6 +1,6 @@
-# NowPlaying
+# NowPlayingView
 
-NowPlaying is a Flutter plugin that provides easy integration with iOS Now Playing controls and information display. This package allows you to update the Now Playing information and handle remote control events for media playback.
+NowPlayingView is a Flutter plugin that provides easy integration with iOS Now Playing controls and information display. This package allows you to update the Now Playing information and handle remote control events for media playback.
 
 ## Features
 
@@ -14,7 +14,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  now_playing: ^0.0.1
+  now_playing_view: ^0.0.1
 ```
 
 Then run:
@@ -33,10 +33,10 @@ flutter pub add now_playing
 
 ### Initialization
 
-Before using the NowPlaying functionality, you need to initialize it with the necessary event handlers:
+Before using the NowPlayingView functionality, you need to initialize it with the necessary event handlers:
 
 ```dart
-NowPlaying.instance.initialize(
+NowPlayingView.instance.initialize(
   onPlay: () {
     // Handle play event
   },
@@ -57,10 +57,10 @@ NowPlaying.instance.initialize(
 
 ### Updating Now Playing Information
 
-You can update the Now Playing information at any time using the `updateNowPlayingInfo` method:
+You can update the Now Playing information at any time using the `updateNowPlayingViewInfo` method:
 
 ```dart
-await NowPlaying.instance.updateNowPlayingInfo(
+await NowPlayingView.instance.updateNowPlayingViewInfo(
   title: 'Song Title',
   artist: 'Artist Name',
   duration: 180.0, // Total duration in seconds
@@ -73,8 +73,8 @@ await NowPlaying.instance.updateNowPlayingInfo(
 ## Notes
 
 - This plugin currently supports iOS only. Android support may be added in future versions.
-- Make sure to call `initialize()` before using any other methods of the NowPlaying instance.
-- The `imageUrl` parameter in `updateNowPlayingInfo` should be a valid URL to an image file.
+- Make sure to call `initialize()` before using any other methods of the NowPlayingView instance.
+- The `imageUrl` parameter in `updateNowPlayingViewInfo` should be a valid URL to an image file.
 
 ## License
 
