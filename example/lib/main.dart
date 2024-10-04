@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
-import 'package:now_playing/now_playing.dart';
+import 'package:now_playing/now_playing_view.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    NowPlaying.instance.initialize(
+    NowPlayingView.instance.initialize(
       onPlay: () => print('Play'),
       onPause: () => print('Pause'),
       onNextTrack: () => print('Next Track'),
@@ -30,7 +30,7 @@ class _MyAppState extends State<MyApp> {
     updateNowPlayingInfoTimer = Timer.periodic(
       const Duration(seconds: 1),
       (timer) {
-        NowPlaying.instance.updateNowPlayingInfo(
+        NowPlayingView.instance.updateNowPlayingInfo(
           title: 'Song Title',
           artist: 'Artist Name',
           duration: 300,

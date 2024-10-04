@@ -1,15 +1,15 @@
 #
 # To learn more about a Podspec see http://guides.cocoapods.org/syntax/podspec.html.
-# Run `pod lib lint now_playing.podspec` to validate before publishing.
+# Run `pod lib lint now_playing_view.podspec` to validate before publishing.
 #
 Pod::Spec.new do |s|
-  s.name             = 'now_playing'
+  s.name             = 'now_playing_view'
   s.version          = '0.0.1'
   s.summary          = 'A new Flutter plugin project.'
   s.description      = <<-DESC
 A new Flutter plugin project.
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'https://github.com/deepidoo/now_playing_view'
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Deepidoo' => 'c.alexandre@deepidoo.com' }
   s.source           = { :path => '.' }
