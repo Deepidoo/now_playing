@@ -1,5 +1,5 @@
-name: now_playing
-description: "A new Flutter plugin project."
+name: now_playing_view
+description: "A Flutter plugin for iOS that provides easy integration with Now Playing controls and information display."
 version: 0.0.1
 repository: https://github.com/deepidoo/now_playing
 
