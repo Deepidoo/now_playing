@@ -7,7 +7,7 @@ PODS:
   - just_audio (0.0.1):
     - Flutter
     - FlutterMacOS
-  - now_playing (0.0.1):
+  - now_playing_view (0.0.1):
     - Flutter
   - path_provider_foundation (0.0.1):
     - Flutter
@@ -18,7 +18,7 @@ DEPENDENCIES:
   - Flutter (from `Flutter`)
   - integration_test (from `.symlinks/plugins/integration_test/ios`)
   - just_audio (from `.symlinks/plugins/just_audio/darwin`)
-  - now_playing (from `.symlinks/plugins/now_playing/ios`)
+  - now_playing_view (from `.symlinks/plugins/now_playing_view/ios`)
   - path_provider_foundation (from `.symlinks/plugins/path_provider_foundation/darwin`)
 
 EXTERNAL SOURCES:
@@ -30,8 +30,8 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/integration_test/ios"
   just_audio:
     :path: ".symlinks/plugins/just_audio/darwin"
-  now_playing:
-    :path: ".symlinks/plugins/now_playing/ios"
+  now_playing_view:
+    :path: ".symlinks/plugins/now_playing_view/ios"
   path_provider_foundation:
     :path: ".symlinks/plugins/path_provider_foundation/darwin"
 
@@ -40,7 +40,7 @@ SPEC CHECKSUMS:
   Flutter: e0871f40cf51350855a761d2e70bf5af5b9b5de7
   integration_test: 4a889634ef21a45d28d50d622cf412dc6d9f586e
   just_audio: 4e391f57b79cad2b0674030a00453ca5ce817eed
-  now_playing: c6479e785d5878ea4460f4455afc66124593165a
+  now_playing_view: 129ff81eb5f87f2253c88d20b1e42e53b65d4679
   path_provider_foundation: 080d55be775b7414fd5a5ef3ac137b97b097e564
 
 PODFILE CHECKSUM: a8c95b011496012acaadb8c0fd2d31956f0d9fa1

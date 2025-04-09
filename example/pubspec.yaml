@@ -19,7 +19,7 @@ dependencies:
     sdk: flutter
   just_audio: ^0.9.46
 
-  now_playing:
+  now_playing_view:
     # When depending on this package from a real application you should use:
     #   now_playing: ^x.y.z
     # See https://dart.dev/tools/pub/dependencies#version-constraints
