@@ -5,16 +5,20 @@ import AVFoundation
 public class NowPlayingPlugin: NSObject, FlutterPlugin {
     private var nowPlayingManager: NowPlayingManager?
     private var channel: FlutterMethodChannel?
-
+    
     private func activateAudioSession() {
         do {
-            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .defaultToSpeaker])
-            try AVAudioSession.sharedInstance().setActive(true)
+            try AVAudioSession.sharedInstance().setCategory(
+                .playback,
+                mode: .default,
+                options: [.mixWithOthers, .defaultToSpeaker, .allowBluetooth, .allowAirPlay]
+            )
+            try AVAudioSession.sharedInstance().setActive(true, options: .notifyOthersOnDeactivation)
         } catch {
             print("Failed to set audio session category: \(error)")
         }
     }
-
+    
     @objc public static func register(with registrar: FlutterPluginRegistrar) {
         let channel = FlutterMethodChannel(name: "com.deepidoo.dev/now_playing", binaryMessenger: registrar.messenger())
         let instance = NowPlayingPlugin()
