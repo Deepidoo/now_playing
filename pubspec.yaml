@@ -1,6 +1,6 @@
 name: now_playing
 description: "A Flutter plugin for iOS that provides easy integration with Now Playing controls and information display."
-version: 0.0.5
+version: 0.0.6
 repository: https://github.com/deepidoo/now_playing
 
 environment:
