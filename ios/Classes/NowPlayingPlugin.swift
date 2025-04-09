@@ -5,14 +5,8 @@ import AVFoundation
 public class NowPlayingPlugin: NSObject, FlutterPlugin {
     private var nowPlayingManager: NowPlayingManager?
     private var channel: FlutterMethodChannel?
-    
-    @objc public static func register(with registrar: FlutterPluginRegistrar) {
-        let channel = FlutterMethodChannel(name: "com.deepidoo.dev/now_playing", binaryMessenger: registrar.messenger())
-        let instance = NowPlayingPlugin()
-        instance.channel = channel
-        instance.nowPlayingManager = NowPlayingManager()
-        registrar.addMethodCallDelegate(instance, channel: channel)
 
+    private func activateAudioSession() {
         do {
             try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default, options: [.mixWithOthers, .defaultToSpeaker])
             try AVAudioSession.sharedInstance().setActive(true)
@@ -21,9 +15,19 @@ public class NowPlayingPlugin: NSObject, FlutterPlugin {
         }
     }
 
+    @objc public static func register(with registrar: FlutterPluginRegistrar) {
+        let channel = FlutterMethodChannel(name: "com.deepidoo.dev/now_playing", binaryMessenger: registrar.messenger())
+        let instance = NowPlayingPlugin()
+        instance.channel = channel
+        instance.nowPlayingManager = NowPlayingManager()
+        registrar.addMethodCallDelegate(instance, channel: channel)
+        instance.activateAudioSession()
+    }
+
     public func handle(_ call: FlutterMethodCall, result: @escaping FlutterResult) {
         switch call.method {
         case "updateNowPlayingInfo":
+            activateAudioSession() // Ensure audio session is active before updating
             if let args = call.arguments as? [String: Any],
                let title = args["title"] as? String,
                let artist = args["artist"] as? String,
